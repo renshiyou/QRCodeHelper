@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace QRCodeHelper
 {
-    class Program
+    public class QRCodeGenerator
     {
-        static void Main(string[] args)
-        {
 
-        }
     }
 }
