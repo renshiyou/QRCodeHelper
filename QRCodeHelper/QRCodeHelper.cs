@@ -9,9 +9,14 @@ using System.Threading.Tasks;
 
 namespace QRCodeHelper
 {
-    public class QRCodeHelper
+    public class QRCodeHelper:IDisposable
     {
         public QRCodeData QrCodeData { get; set; }
+
+        public QRCodeHelper(QRCodeData qrCodeData)
+        {
+            this.QrCodeData = qrCodeData;
+        }
 
         public Bitmap GetGraphic(int pixelsPerModule, bool drawQuietZones = true)
         {
@@ -38,6 +43,11 @@ namespace QRCodeHelper
 
             gfx.Save();
             return bmp;
+        }
+
+        public void Dispose()
+        {
+            this.QrCodeData = null;
         }
     }
 }
